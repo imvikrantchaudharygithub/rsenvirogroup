@@ -1,0 +1,256 @@
+/* =========================================
+   RS ENVIRO GROUP — main.css
+   Variables, Reset, Base, Typography
+   ========================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=JetBrains+Mono:wght@400;500&display=swap');
+
+/* ---- CSS Custom Properties ---- */
+:root {
+  --color-primary:        #0B2B5C;
+  --color-primary-light:  #1A4A8A;
+  --color-accent:         #00C9B1;
+  --color-accent-glow:    #00FFE1;
+  --color-secondary:      #1E293B;
+  --color-surface:        #F0F6FF;
+  --color-white:          #FFFFFF;
+  --color-off-white:      #F7FAFD;
+  --color-text-dark:      #0D1B2A;
+  --color-text-mid:       #3D5A80;
+  --color-text-light:     #8EAFD4;
+  --color-border:         rgba(0, 201, 177, 0.2);
+
+  --gradient-hero:     linear-gradient(135deg, #0B2B5C 0%, #0E4D7B 50%, #0B2B5C 100%);
+  --gradient-accent:   linear-gradient(90deg, #00C9B1, #0087FF);
+  --gradient-card:     linear-gradient(145deg, rgba(255,255,255,0.08), rgba(255,255,255,0.02));
+  --gradient-water:    linear-gradient(180deg, #0B2B5C 0%, #0A1628 100%);
+
+  --font-display:  'Syne', sans-serif;
+  --font-body:     'DM Sans', sans-serif;
+  --font-mono:     'JetBrains Mono', monospace;
+
+  --size-hero:     clamp(2.5rem, 7vw, 6.5rem);
+  --size-h2:       clamp(2rem, 4vw, 3.5rem);
+  --size-h3:       clamp(1.3rem, 2.5vw, 1.8rem);
+  --size-body:     1.05rem;
+  --size-small:    0.875rem;
+  --line-body:     1.75;
+
+  --section-padding: clamp(4rem, 8vw, 9rem) 0;
+  --container:       min(90%, 1280px);
+  --radius-sm:       8px;
+  --radius-md:       16px;
+  --radius-lg:       24px;
+  --radius-xl:       40px;
+  --shadow-card:     0 4px 24px rgba(11, 43, 92, 0.12);
+  --shadow-glow:     0 0 40px rgba(0, 201, 177, 0.25);
+  --transition:      all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+  --z-preloader: 9999;
+  --z-cursor:    9998;
+  --z-nav:       1000;
+  --z-modal:     900;
+  --z-floating:  800;
+  --z-overlay:   500;
+  --z-above:     100;
+  --z-base:      1;
+}
+
+/* ---- Reset ---- */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-body);
+  font-size: var(--size-body);
+  line-height: var(--line-body);
+  color: var(--color-text-dark);
+  background-color: var(--color-white);
+  overflow-x: hidden;
+  cursor: none;
+}
+
+img, video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+
+/* ---- Base Utility Classes ---- */
+.container {
+  width: var(--container);
+  margin-inline: auto;
+}
+
+.section-padding {
+  padding: var(--section-padding);
+}
+
+/* Skip to content */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 1rem;
+  z-index: calc(var(--z-nav) + 10);
+  background: var(--color-accent);
+  color: var(--color-text-dark);
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  transition: top 0.2s;
+}
+.skip-link:focus { top: 1rem; }
+
+/* ---- Typography ---- */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  line-height: 1.2;
+  color: var(--color-text-dark);
+}
+
+h1 { font-size: var(--size-hero); font-weight: 800; }
+h2 { font-size: var(--size-h2);   font-weight: 700; }
+h3 { font-size: var(--size-h3);   font-weight: 600; }
+
+p { max-width: 70ch; }
+
+.section-label {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--color-accent);
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.section-label::before {
+  content: '';
+  display: inline-block;
+  width: 24px;
+  height: 2px;
+  background: var(--color-accent);
+  vertical-align: middle;
+  margin-right: 8px;
+}
+
+.section-header {
+  margin-bottom: clamp(2.5rem, 5vw, 4rem);
+}
+
+.section-header h2 {
+  margin-bottom: 1rem;
+}
+
+.section-header p {
+  color: var(--color-text-mid);
+  font-size: 1.1rem;
+}
+
+/* ---- Section Alternating Themes ---- */
+.section-dark {
+  background: var(--color-secondary);
+  color: var(--color-white);
+}
+.section-dark h2,
+.section-dark h3,
+.section-dark h4 { color: var(--color-white); }
+.section-dark p,
+.section-dark .section-header p { color: var(--color-text-light); }
+.section-dark .section-label { color: var(--color-accent); }
+
+.section-darkest {
+  background: #0A1628;
+  color: var(--color-white);
+}
+.section-darkest h2,
+.section-darkest h3 { color: var(--color-white); }
+.section-darkest p  { color: var(--color-text-light); }
+
+.section-navy {
+  background: var(--gradient-water);
+  color: var(--color-white);
+}
+.section-navy h2,
+.section-navy h3 { color: var(--color-white); }
+.section-navy p   { color: var(--color-text-light); }
+
+.section-light {
+  background: var(--color-off-white);
+}
+
+/* ---- Wave Dividers ---- */
+.wave-divider {
+  line-height: 0;
+  font-size: 0;
+  overflow: hidden;
+  display: block;
+  margin: 0;
+  padding: 0;
+  /* Prevent sub-pixel gaps between sections */
+  margin-bottom: -1px;
+}
+
+.wave-divider svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  /* min-height prevents collapse on small screens */
+  min-height: 30px;
+}
+
+/* ---- Teal Gradient Text ---- */
+.text-gradient {
+  background: var(--gradient-accent);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ---- Scrollbar ---- */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--color-secondary); }
+::-webkit-scrollbar-thumb { background: var(--color-accent); border-radius: 3px; }
+
+/* ---- Selection ---- */
+::selection {
+  background: rgba(0, 201, 177, 0.3);
+  color: var(--color-text-dark);
+}
+
+/* ---- Focus Ring ---- */
+:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}

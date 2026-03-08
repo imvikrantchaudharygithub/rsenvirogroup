@@ -1,0 +1,562 @@
+/* =========================================
+   RS ENVIRO GROUP — responsive.css
+   Mobile First — Fixes all white space,
+   overflow, and layout issues on mobile
+   ========================================= */
+
+/* =========================================
+   GLOBAL MOBILE FIXES
+   ========================================= */
+
+/* Prevent any horizontal overflow */
+html, body {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* Remove negative margins that cause white lines */
+.wave-divider {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  line-height: 0;
+  font-size: 0;
+}
+
+.wave-divider svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  vertical-align: bottom;
+}
+
+/* Cursor — hide on touch devices */
+@media (pointer: coarse) {
+  .cursor-dot, .cursor-outline { display: none !important; }
+  body { cursor: auto !important; }
+}
+
+/* =========================================
+   MOBILE DEFAULT (< 768px)
+   ========================================= */
+
+/* Nav */
+.hamburger { display: flex; }
+.nav-links  { display: none; }
+
+/* Hero title — prevent overflow on narrow screens */
+#hero h1 {
+  word-break: break-word;
+  overflow-wrap: break-word;
+}
+
+/* Hero decoration — hidden on mobile */
+#hero-decoration { display: none !important; }
+
+/* Stats bar — 2x2 grid on mobile */
+.stats-bar-inner {
+  grid-template-columns: repeat(2, 1fr) !important;
+}
+
+/* Fix individual stat bar borders on 2x2 layout */
+.stats-bar-item {
+  border-right: 1px solid rgba(255,255,255,0.06) !important;
+  border-top: none !important;
+}
+.stats-bar-item:nth-child(2)  { border-right: none !important; }
+.stats-bar-item:nth-child(3)  { border-top: 1px solid rgba(255,255,255,0.06) !important; }
+.stats-bar-item:nth-child(4)  {
+  border-right: none !important;
+  border-top: 1px solid rgba(255,255,255,0.06) !important;
+}
+
+/* Hero buttons — stack on mobile */
+.hero-buttons {
+  flex-direction: column;
+  align-items: stretch;
+}
+.hero-buttons .btn {
+  justify-content: center;
+  width: 100%;
+}
+
+/* About */
+.about-key-points {
+  grid-template-columns: 1fr !important;
+}
+
+/* About visual — hide on mobile (shows only on desktop) */
+.about-visual { display: none !important; }
+
+/* Divisions — single column */
+.divisions-grid {
+  grid-template-columns: 1fr !important;
+}
+
+/* Services — single column */
+.services-grid {
+  grid-template-columns: 1fr !important;
+}
+
+/* Products — 2 columns on mobile */
+.products-grid {
+  grid-template-columns: repeat(2, 1fr) !important;
+}
+
+/* Stats / Why Us — 2 col with proper alignment */
+.stats-grid {
+  grid-template-columns: repeat(2, 1fr) !important;
+  gap: 0.75rem !important;
+  align-items: stretch !important;
+  width: 100% !important;
+}
+
+/* BY THE NUMBERS: equal-height cards per row (stretch), centered content */
+#why-us .stats-grid .pillar-card {
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  text-align: center !important;
+  padding: 1rem 0.75rem !important;
+}
+
+#why-us .stats-grid .stat-number {
+  margin-bottom: 0.25rem !important;
+  line-height: 1.1 !important;
+}
+
+#why-us .stats-grid .stat-label {
+  font-size: 0.65rem !important;
+  line-height: 1.25 !important;
+  letter-spacing: 0.04em !important;
+  max-width: 100% !important;
+}
+
+/* Gallery — single column */
+.gallery-grid {
+  grid-template-columns: 1fr !important;
+}
+
+/* Clients grid — single column */
+.clients-grid {
+  grid-template-columns: 1fr !important;
+}
+
+/* About layout (about + contact sections) */
+.about-layout {
+  grid-template-columns: 1fr !important;
+}
+
+/* Process — vertical timeline on mobile */
+.process-steps {
+  flex-direction: column !important;
+  gap: 2rem !important;
+  align-items: stretch !important;
+}
+
+.process-steps::before { display: none !important; }
+.process-line          { display: none !important; }
+
+.process-step {
+  flex-direction: row !important;
+  text-align: left !important;
+  align-items: flex-start !important;
+  padding: 0 !important;
+  gap: 1.25rem !important;
+}
+
+.process-step .step-circle {
+  flex-shrink: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.step-desc {
+  margin: 0 !important;
+  max-width: 100% !important;
+}
+
+/* Contact form — prevent 2-col grid on mobile */
+#contact-form .form-row-2col {
+  grid-template-columns: 1fr !important;
+}
+
+/* The 2-col form grids inside contact */
+#form-fields > div[style*="grid-template-columns: 1fr 1fr"] {
+  grid-template-columns: 1fr !important;
+}
+
+/* Footer — stacked */
+.footer-grid {
+  grid-template-columns: 1fr !important;
+  gap: 2rem !important;
+}
+
+/* Tabs — horizontal scroll on small screens */
+.tab-buttons,
+.filter-tabs {
+  overflow-x: auto;
+  flex-wrap: nowrap !important;
+  padding-bottom: 0.5rem;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.tab-buttons::-webkit-scrollbar,
+.filter-tabs::-webkit-scrollbar { display: none; }
+
+/* Tab buttons — don't shrink */
+.tab-btn,
+.filter-tab { flex-shrink: 0; }
+
+/* WhatsApp float — smaller on mobile */
+.whatsapp-btn {
+  width: 50px;
+  height: 50px;
+}
+
+/* Back to top — smaller on mobile */
+.back-to-top {
+  bottom: 7rem;
+  right: 1.25rem;
+}
+
+.whatsapp-float {
+  bottom: 1.25rem;
+  right: 1.25rem;
+}
+
+/* Section padding — tighter on mobile */
+.section-padding {
+  padding: clamp(3rem, 7vw, 5rem) 0 !important;
+}
+
+/* Ensure section label wraps properly */
+.section-label {
+  white-space: normal;
+  word-break: break-word;
+}
+
+/* Fix: values grid on mobile */
+.about-key-points > .key-point {
+  display: flex;
+  gap: 0.75rem;
+}
+
+/* Marquee — smaller font on mobile */
+.marquee-item {
+  font-size: 0.78rem;
+  padding: 0.4rem 1rem;
+}
+
+/* =========================================
+   WHY CHOOSE US — pillar cards alignment (mobile)
+   ========================================= */
+#why-us .why-us-grid > div {
+  min-width: 0 !important; /* allow grid children to shrink */
+}
+
+/* WHY CHOOSE US (Four Pillars): full-width single column, aligned cards — do not affect .stats-grid */
+#why-us .gsap-stagger-parent:not(.stats-grid) {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: 1rem !important;
+  width: 100% !important;
+  min-width: 0 !important;
+}
+
+#why-us .gsap-stagger-parent:not(.stats-grid) .pillar-card {
+  width: 100% !important;
+  min-width: 0 !important;
+  box-sizing: border-box !important;
+  padding: 1.25rem 1rem !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: flex-start !important;
+  text-align: left !important;
+}
+
+#why-us .gsap-stagger-parent:not(.stats-grid) .pillar-icon {
+  margin-bottom: 0.75rem !important;
+}
+
+#why-us .gsap-stagger-parent:not(.stats-grid) .pillar-card h4 {
+  margin-bottom: 0.5rem !important;
+}
+
+#why-us .gsap-stagger-parent:not(.stats-grid) .pillar-card p {
+  font-size: 0.85rem !important;
+  line-height: 1.6 !important;
+  max-width: 100% !important;
+}
+
+/* =========================================
+   SMALL MOBILE FIXES (< 480px)
+   ========================================= */
+@media (max-width: 480px) {
+  /* Hero number stats smaller */
+  .stats-bar-number {
+    font-size: 1.5rem !important;
+  }
+  .stats-bar-label {
+    font-size: 0.65rem !important;
+  }
+
+  /* Product cards on very small screens */
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  /* Pillar cards */
+  .pillar-card {
+    padding: 1.25rem !important;
+  }
+
+  /* Division tags wrap */
+  .division-tags {
+    gap: 0.35rem;
+  }
+
+  /* Contact info — smaller */
+  .contact-info-text p,
+  .contact-info-text a {
+    font-size: 0.875rem !important;
+  }
+
+  /* Wave divider height */
+  .wave-divider svg {
+    height: 40px !important;
+    min-height: 40px;
+  }
+
+  /* Stats stat-number on mobile */
+  .stat-number {
+    font-size: clamp(2rem, 8vw, 3rem) !important;
+  }
+
+  /* Navigation logo smaller */
+  .nav-logo {
+    font-size: 1.1rem !important;
+  }
+}
+
+/* =========================================
+   TABLET (768px+)
+   ========================================= */
+@media (min-width: 768px) {
+
+  /* Hero buttons — side by side */
+  .hero-buttons {
+    flex-direction: row !important;
+    align-items: center !important;
+  }
+  .hero-buttons .btn {
+    width: auto !important;
+    justify-content: flex-start !important;
+  }
+
+  /* About */
+  .about-key-points {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  /* Divisions — 2 columns */
+  .divisions-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  /* Services — 2 columns */
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  /* Products — 3 columns */
+  .products-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+
+  /* Gallery — 2 columns */
+  .gallery-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  /* Clients — 2 columns */
+  .clients-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+
+  /* Stats */
+  .stats-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+
+  /* Stats bar — 4 columns */
+  .stats-bar-inner {
+    grid-template-columns: repeat(4, 1fr) !important;
+  }
+  .stats-bar-item {
+    border-right: 1px solid rgba(255,255,255,0.06) !important;
+    border-top: none !important;
+  }
+  .stats-bar-item:last-child { border-right: none !important; }
+
+  /* Footer — 2 columns */
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 2.5rem !important;
+  }
+
+  /* Tab buttons wrappable */
+  .tab-buttons,
+  .filter-tabs {
+    flex-wrap: wrap !important;
+    overflow-x: visible;
+  }
+
+  /* Hero decoration — show on tablet+ */
+  #hero-decoration { display: block !important; }
+
+  /* About visual visible on tablet */
+  .about-visual { display: block !important; }
+}
+
+/* =========================================
+   LAPTOP (1024px+)
+   ========================================= */
+@media (min-width: 1024px) {
+
+  /* Desktop nav */
+  .hamburger { display: none !important; }
+  .nav-links  { display: flex !important; }
+
+  /* Services — 3 columns */
+  .services-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+
+  /* Gallery — 3 columns */
+  .gallery-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+
+  /* Clients — 3 columns */
+  .clients-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+
+  /* Products — 3 columns */
+  .products-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+
+  /* Stats — 3 columns */
+  .stats-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+
+  /* About layout — 2 columns */
+  .about-layout {
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  /* Footer — 4 columns */
+  .footer-grid {
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 3rem !important;
+  }
+
+  /* Process — horizontal */
+  .process-steps {
+    flex-direction: row !important;
+    gap: 0 !important;
+    align-items: flex-start !important;
+  }
+  .process-steps::before { display: block !important; }
+  .process-line          { display: block !important; }
+
+  .process-step {
+    flex-direction: column !important;
+    text-align: center !important;
+    align-items: center !important;
+    padding: 0 1rem !important;
+    gap: 0 !important;
+  }
+
+  .process-step .step-circle {
+    margin-bottom: 1.5rem !important;
+  }
+
+  .step-desc {
+    max-width: 200px !important;
+    margin: 0 auto !important;
+  }
+
+  /* Why Us — 2-column layout */
+  #why-us .container > div {
+    grid-template-columns: 1fr 1fr !important;
+  }
+}
+
+/* =========================================
+   DESKTOP (1280px+)
+   ========================================= */
+@media (min-width: 1280px) {
+  .products-grid {
+    grid-template-columns: repeat(4, 1fr) !important;
+  }
+  .clients-grid {
+    grid-template-columns: repeat(4, 1fr) !important;
+  }
+  .stats-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+  .gallery-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+}
+
+/* =========================================
+   WIDE (1536px+)
+   ========================================= */
+@media (min-width: 1536px) {
+  :root {
+    --size-body: 1.1rem;
+  }
+}
+
+/* =========================================
+   REDUCED MOTION
+   ========================================= */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .animate-float,
+  .animate-float-slow,
+  .animate-pulse-ring,
+  .animate-bounce-down,
+  .animate-spin,
+  .animate-glow,
+  .marquee-track {
+    animation: none !important;
+  }
+
+  .reveal, .reveal-left, .reveal-right, .reveal-scale {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+
+/* =========================================
+   HIGH CONTRAST
+   ========================================= */
+@media (forced-colors: active) {
+  .btn-primary,
+  .nav-cta {
+    forced-color-adjust: none;
+  }
+}

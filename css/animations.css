@@ -1,0 +1,248 @@
+/* =========================================
+   RS ENVIRO GROUP — animations.css
+   Keyframes, Transitions, Motion
+   ========================================= */
+
+/* ---- Floating ---- */
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-12px); }
+}
+
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0px) rotate(0deg); }
+  50%       { transform: translateY(-8px) rotate(3deg); }
+}
+
+/* ---- Water ripple ---- */
+@keyframes ripple {
+  0%   { transform: scale(0.8); opacity: 1; }
+  100% { transform: scale(2.5); opacity: 0; }
+}
+
+/* ---- Wave sweep ---- */
+@keyframes waveSweep {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ---- Pulse ring (WhatsApp CTA) ---- */
+@keyframes pulseRing {
+  0%   { transform: scale(1); opacity: 0.6; }
+  100% { transform: scale(1.6); opacity: 0; }
+}
+
+/* ---- Fade in up ---- */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ---- Fade in ---- */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+/* ---- Slide in from left ---- */
+@keyframes slideInLeft {
+  from { opacity: 0; transform: translateX(-60px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+/* ---- Slide in from right ---- */
+@keyframes slideInRight {
+  from { opacity: 0; transform: translateX(60px); }
+  to   { opacity: 1; transform: translateX(0); }
+}
+
+/* ---- Scale bounce ---- */
+@keyframes scaleBounce {
+  0%   { transform: scale(0.8); opacity: 0; }
+  60%  { transform: scale(1.05); opacity: 1; }
+  100% { transform: scale(1); }
+}
+
+/* ---- Preloader water fill ---- */
+@keyframes waterFill {
+  0%   { clip-path: inset(100% 0 0 0); }
+  100% { clip-path: inset(0% 0 0 0); }
+}
+
+/* ---- Typewriter cursor blink ---- */
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0; }
+}
+
+/* ---- Draw SVG line ---- */
+@keyframes drawLine {
+  from { stroke-dashoffset: 1000; }
+  to   { stroke-dashoffset: 0; }
+}
+
+/* ---- Gradient shift ---- */
+@keyframes gradientShift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ---- Bounce chevron ---- */
+@keyframes bounceDown {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(8px); }
+}
+
+/* ---- Marquee scroll ---- */
+@keyframes marquee {
+  0%   { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+/* ---- Spin ---- */
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+/* ---- Number count (visual for preloader) ---- */
+@keyframes countUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ---- Glow pulse ---- */
+@keyframes glowPulse {
+  0%, 100% { box-shadow: 0 0 20px rgba(0, 201, 177, 0.3); }
+  50%       { box-shadow: 0 0 50px rgba(0, 201, 177, 0.6); }
+}
+
+/* ---- Particle drift ---- */
+@keyframes particleDrift {
+  0%   { transform: translateY(0) translateX(0); opacity: 0; }
+  10%  { opacity: 1; }
+  90%  { opacity: 0.5; }
+  100% { transform: translateY(-100vh) translateX(30px); opacity: 0; }
+}
+
+/* ---- Process line draw ---- */
+@keyframes lineGrow {
+  from { width: 0; }
+  to   { width: 100%; }
+}
+
+/* ---- Shimmer ---- */
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+/* =========================================
+   Animation Utility Classes
+   ========================================= */
+
+.animate-float        { animation: float 4s ease-in-out infinite; }
+.animate-float-slow   { animation: floatSlow 6s ease-in-out infinite; }
+.animate-pulse-ring   { animation: pulseRing 2s ease-out infinite; }
+.animate-bounce-down  { animation: bounceDown 1.5s ease-in-out infinite; }
+.animate-spin         { animation: spin 1s linear infinite; }
+.animate-glow         { animation: glowPulse 3s ease-in-out infinite; }
+
+/* =========================================
+   Scroll-Reveal Initial States
+   Elements start hidden and transition to
+   revealed when .revealed class is added.
+   Cards/grids use .gsap-stagger-child which
+   gets .reveal added dynamically by JS.
+   ========================================= */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+              transform 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  /* Safety: never stay invisible more than 3s */
+  animation: revealSafety 0s 3s both;
+}
+
+@keyframes revealSafety {
+  to { opacity: 1; transform: none; }
+}
+
+.reveal.revealed {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+.reveal-left {
+  opacity: 0;
+  transform: translateX(-50px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal-left.revealed {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+}
+
+.reveal-right {
+  opacity: 0;
+  transform: translateX(50px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.reveal-right.revealed {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+}
+
+.reveal-scale {
+  opacity: 0;
+  transform: scale(0.92);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+.reveal-scale.revealed {
+  opacity: 1 !important;
+  transform: scale(1) !important;
+}
+
+/* Stagger transition delays */
+.stagger-1 { transition-delay: 0.08s; }
+.stagger-2 { transition-delay: 0.16s; }
+.stagger-3 { transition-delay: 0.24s; }
+.stagger-4 { transition-delay: 0.32s; }
+.stagger-5 { transition-delay: 0.40s; }
+.stagger-6 { transition-delay: 0.48s; }
+
+/* Hero elements — initial state for GSAP entrance */
+/* These start invisible ONLY because GSAP will animate them */
+/* If GSAP fails/delays, CSS fallback at 3.5s ensures visibility */
+.hero-label,
+.hero-title,
+.hero-subtitle,
+.hero-buttons .btn,
+#hero-decoration {
+  opacity: 0;
+  animation: revealSafety 0s 3.5s both;
+}
+
+/* =========================================
+   Reduced Motion
+   ========================================= */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .reveal, .reveal-left, .reveal-right, .reveal-scale {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+
+  .hero-label, .hero-title, .hero-subtitle,
+  .hero-buttons .btn, #hero-decoration {
+    opacity: 1 !important;
+  }
+}
