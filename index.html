@@ -21,6 +21,7 @@
   <link rel="stylesheet" href="css/animations.css" />
   <link rel="stylesheet" href="css/components.css" />
   <link rel="stylesheet" href="css/responsive.css" />
+  <link rel="stylesheet" href="css/gallery-carousel.css" />
 
   <!-- Critical inline CSS for above-fold -->
   <style>
@@ -386,7 +387,88 @@
     <!-- Wave -->
     <div class="wave-divider" aria-hidden="true" style="background:var(--color-off-white);">
       <svg viewBox="0 0 1440 60" preserveAspectRatio="none" style="height:60px;">
-        <path d="M0,20 C360,60 720,0 1080,40 C1260,60 1380,20 1440,20 L1440,60 L0,60Z" fill="var(--color-secondary)"/>
+        <path d="M0,20 C360,60 720,0 1080,40 C1260,60 1380,20 1440,20 L1440,60 L0,60Z" fill="#0A1628"/>
+      </svg>
+    </div>
+
+    <!-- =============================================
+         SECTION: GALLERY (Darkest) - Moved Here
+         ============================================= -->
+    <section id="gallery" class="section-darkest section-padding" aria-label="Projects Gallery">
+      <div class="container">
+        <div class="section-header" style="text-align:center;">
+          <span class="section-label reveal">OUR PROJECTS</span>
+          <h2 class="reveal stagger-1">Engineering Solutions<br><span class="text-gradient">In Action</span></h2>
+          <p class="reveal stagger-2" style="max-width:60ch;margin:0 auto;">
+            Explore our diverse range of water treatment plants and control panel installations across residential, commercial, and industrial sectors.
+          </p>
+        </div>
+
+        <!-- 3D Carousel Gallery -->
+        <div class="gallery-scene reveal">
+          <div class="gallery-carousel">
+            <div class="gallery-item" style="--i:1;">
+              <img src="images/plants/plant-1.jpeg" alt="Project Image 1" loading="lazy">
+            </div>
+            <div class="gallery-item" style="--i:2;">
+              <img src="images/plants/plant-2.jpeg" alt="Project Image 2" loading="lazy">
+            </div>
+            <div class="gallery-item" style="--i:3;">
+              <img src="images/plants/plant-3.jpeg" alt="Project Image 3" loading="lazy">
+            </div>
+            <div class="gallery-item" style="--i:4;">
+              <img src="images/plants/plant-4.jpeg" alt="Project Image 4" loading="lazy">
+            </div>
+            <div class="gallery-item" style="--i:5;">
+              <img src="images/plants/plant-5.jpeg" alt="Project Image 5" loading="lazy">
+            </div>
+            <div class="gallery-item" style="--i:6;">
+              <img src="images/plants/plant-6.jpeg" alt="Project Image 6" loading="lazy">
+            </div>
+            <div class="gallery-item" style="--i:7;">
+              <img src="images/plants/plant-7.jpeg" alt="Project Image 7" loading="lazy">
+            </div>
+            <div class="gallery-item" style="--i:8;">
+              <img src="images/plants/plant-8.jpeg" alt="Project Image 8" loading="lazy">
+            </div>
+            <div class="gallery-item" style="--i:9;">
+              <img src="images/plants/plant-9.jpeg" alt="Project Image 9" loading="lazy">
+            </div>
+            <div class="gallery-item" style="--i:10;">
+              <img src="images/plants/plant-10.jpeg" alt="Project Image 10" loading="lazy">
+            </div>
+            <div class="gallery-item" style="--i:11;">
+              <img src="images/plants/plant-11.jpeg" alt="Project Image 11" loading="lazy">
+            </div>
+            <div class="gallery-item" style="--i:12;">
+              <img src="images/plants/plant-12.jpeg" alt="Project Image 12" loading="lazy">
+            </div>
+            <div class="gallery-item" style="--i:13;">
+              <img src="images/plants/plant-13.jpeg" alt="Project Image 13" loading="lazy">
+            </div>
+            <div class="gallery-item" style="--i:14;">
+              <img src="images/plants/plant-14.jpeg" alt="Project Image 14" loading="lazy">
+            </div>
+            <div class="gallery-item" style="--i:15;">
+              <img src="images/plants/plant-15.jpeg" alt="Project Image 15" loading="lazy">
+            </div>
+          </div>
+        </div>
+
+        <!-- CTA -->
+        <div style="text-align:center;margin-top:3rem;" class="reveal">
+          <a href="#contact" class="btn btn-primary">
+            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+            Discuss Your Project
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Wave -->
+    <div class="wave-divider" aria-hidden="true" style="background:var(--color-secondary);">
+      <svg viewBox="0 0 1440 60" preserveAspectRatio="none" style="height:60px;">
+        <path d="M0,30 C360,0 720,60 1080,30 C1260,15 1380,45 1440,20 L1440,60 L0,60Z" fill="var(--color-secondary)"/>
       </svg>
     </div>
 
@@ -806,251 +888,6 @@
     <div class="wave-divider" aria-hidden="true" style="background:var(--color-secondary);">
       <svg viewBox="0 0 1440 60" preserveAspectRatio="none" style="height:60px;">
         <path d="M0,30 C240,5 480,55 720,30 C960,5 1200,55 1440,30 L1440,60 L0,60Z" fill="#0A1628"/>
-      </svg>
-    </div>
-
-    <!-- =============================================
-         SECTION 6: GALLERY (Darkest)
-         ============================================= -->
-    <section id="gallery" class="section-darkest section-padding" aria-label="Projects Gallery">
-      <div class="container">
-        <div class="section-header" style="text-align:center;">
-          <span class="section-label reveal">OUR PROJECTS</span>
-          <h2 class="reveal stagger-1">Engineering Solutions<br><span class="text-gradient">In Action</span></h2>
-        </div>
-
-        <!-- Filter Tabs -->
-        <div class="filter-tabs reveal">
-          <button class="filter-tab active" data-filter="all">All</button>
-          <button class="filter-tab" data-filter="stp">STP Plants</button>
-          <button class="filter-tab" data-filter="etp">ETP Plants</button>
-          <button class="filter-tab" data-filter="wtp">WTP / Pre-Filtration</button>
-          <button class="filter-tab" data-filter="ro">RO Systems</button>
-          <button class="filter-tab" data-filter="uf">UF Plants</button>
-          <button class="filter-tab" data-filter="panel">Control Panels</button>
-        </div>
-
-        <div class="gallery-grid gsap-stagger-parent" style="display:grid;gap:1.25rem;">
-
-          <div class="gallery-item gsap-stagger-child" data-category="ro" tabindex="0" role="img" aria-label="RO Plant 3000 LPH with Pre-Filters">
-            <div class="gallery-placeholder">
-              <div class="gallery-placeholder-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="9"/><path d="M12 3v18M3 12h18"/><path d="M5.6 5.6l12.8 12.8M18.4 5.6L5.6 18.4"/></svg>
-              </div>
-              <p style="font-family:var(--font-mono);font-size:0.7rem;color:rgba(0,201,177,0.5);letter-spacing:0.05em;">RO SYSTEM</p>
-            </div>
-            <div class="gallery-overlay">
-              <span class="gallery-tag">RO Plant</span>
-              <p class="gallery-title">RO Plant 3000 LPH with Pre-Filters (Residential)</p>
-              <span class="gallery-view">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
-                View Project
-              </span>
-            </div>
-          </div>
-
-          <div class="gallery-item gsap-stagger-child" data-category="wtp" tabindex="0" role="img" aria-label="Pre-Filtration and Softening System 100 KLD">
-            <div class="gallery-placeholder">
-              <div class="gallery-placeholder-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16v4H4zM4 12h16v4H4zM4 20h16"/><path d="M8 4v4M12 4v4M16 4v4M8 12v4M12 12v4M16 12v4"/></svg>
-              </div>
-              <p style="font-family:var(--font-mono);font-size:0.7rem;color:rgba(0,201,177,0.5);letter-spacing:0.05em;">WTP / SOFTENER</p>
-            </div>
-            <div class="gallery-overlay">
-              <span class="gallery-tag">WTP</span>
-              <p class="gallery-title">Pre-Filtration &amp; Softening System — 100 KLD</p>
-              <span class="gallery-view">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
-                View Project
-              </span>
-            </div>
-          </div>
-
-          <div class="gallery-item gsap-stagger-child" data-category="wtp" tabindex="0" role="img" aria-label="Pre-Filtration and Softening System 240 KLD">
-            <div class="gallery-placeholder">
-              <div class="gallery-placeholder-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M4 4h16v4H4zM4 12h16v4H4z"/><ellipse cx="12" cy="20" rx="8" ry="3"/></svg>
-              </div>
-              <p style="font-family:var(--font-mono);font-size:0.7rem;color:rgba(0,201,177,0.5);letter-spacing:0.05em;">WTP SYSTEM</p>
-            </div>
-            <div class="gallery-overlay">
-              <span class="gallery-tag">WTP</span>
-              <p class="gallery-title">Pre-Filtration &amp; Softening System — 240 KLD</p>
-              <span class="gallery-view">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
-                View Project
-              </span>
-            </div>
-          </div>
-
-          <div class="gallery-item gsap-stagger-child" data-category="stp" tabindex="0" role="img" aria-label="Sewage Treatment Plant 200 KLD">
-            <div class="gallery-placeholder">
-              <div class="gallery-placeholder-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M12 6c0 0-4 3.5-4 7s4 7 4 7"/></svg>
-              </div>
-              <p style="font-family:var(--font-mono);font-size:0.7rem;color:rgba(0,201,177,0.5);letter-spacing:0.05em;">STP PLANT</p>
-            </div>
-            <div class="gallery-overlay">
-              <span class="gallery-tag">STP</span>
-              <p class="gallery-title">Sewage Treatment Plant — 200 KLD</p>
-              <span class="gallery-view">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
-                View Project
-              </span>
-            </div>
-          </div>
-
-          <div class="gallery-item gsap-stagger-child" data-category="uf" tabindex="0" role="img" aria-label="Ultra-Filtration Plant HydraCap 80">
-            <div class="gallery-placeholder">
-              <div class="gallery-placeholder-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 12h18M3 6h18M3 18h18"/><circle cx="9" cy="6" r="1.5" fill="currentColor" stroke="none"/><circle cx="15" cy="12" r="1.5" fill="currentColor" stroke="none"/><circle cx="9" cy="18" r="1.5" fill="currentColor" stroke="none"/></svg>
-              </div>
-              <p style="font-family:var(--font-mono);font-size:0.7rem;color:rgba(0,201,177,0.5);letter-spacing:0.05em;">UF MEMBRANE</p>
-            </div>
-            <div class="gallery-overlay">
-              <span class="gallery-tag">UF Plant</span>
-              <p class="gallery-title">Ultra-Filtration Plant (HydraCap 80 Membranes)</p>
-              <span class="gallery-view">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
-                View Project
-              </span>
-            </div>
-          </div>
-
-          <div class="gallery-item gsap-stagger-child" data-category="etp" tabindex="0" role="img" aria-label="Effluent Treatment Plant 30 KLD">
-            <div class="gallery-placeholder">
-              <div class="gallery-placeholder-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="8" width="20" height="12" rx="2"/><path d="M6 8V6a2 2 0 0 1 2-2h8a2 2 0 0 1 2 2v2"/></svg>
-              </div>
-              <p style="font-family:var(--font-mono);font-size:0.7rem;color:rgba(0,201,177,0.5);letter-spacing:0.05em;">ETP PLANT</p>
-            </div>
-            <div class="gallery-overlay">
-              <span class="gallery-tag">ETP</span>
-              <p class="gallery-title">Effluent Treatment Plant — 30 KLD</p>
-              <span class="gallery-view">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
-                View Project
-              </span>
-            </div>
-          </div>
-
-          <div class="gallery-item gsap-stagger-child" data-category="etp" tabindex="0" role="img" aria-label="ETP 10 KLD Chrome Plating Unit">
-            <div class="gallery-placeholder">
-              <div class="gallery-placeholder-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M7 6V4M17 6V4M7 18v2M17 18v2"/><path d="M11 11h2v4h-2z"/></svg>
-              </div>
-              <p style="font-family:var(--font-mono);font-size:0.7rem;color:rgba(0,201,177,0.5);letter-spacing:0.05em;">CHROME PLATING</p>
-            </div>
-            <div class="gallery-overlay">
-              <span class="gallery-tag">ETP</span>
-              <p class="gallery-title">ETP 10 KLD — Chrome Plating Unit</p>
-              <span class="gallery-view">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
-                View Project
-              </span>
-            </div>
-          </div>
-
-          <div class="gallery-item gsap-stagger-child" data-category="etp" tabindex="0" role="img" aria-label="ETP 10 KLD Automobile Industries">
-            <div class="gallery-placeholder">
-              <div class="gallery-placeholder-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 17H3a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11l5 5v10a2 2 0 0 1-2 2h-2"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg>
-              </div>
-              <p style="font-family:var(--font-mono);font-size:0.7rem;color:rgba(0,201,177,0.5);letter-spacing:0.05em;">AUTOMOBILE</p>
-            </div>
-            <div class="gallery-overlay">
-              <span class="gallery-tag">ETP</span>
-              <p class="gallery-title">ETP 10 KLD — Automobile Industries</p>
-              <span class="gallery-view">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
-                View Project
-              </span>
-            </div>
-          </div>
-
-          <div class="gallery-item gsap-stagger-child" data-category="etp" tabindex="0" role="img" aria-label="ETP 10 KLD Car Washing">
-            <div class="gallery-placeholder">
-              <div class="gallery-placeholder-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 2c0 0-8 7.58-8 13a8 8 0 0 0 16 0c0-5.42-8-13-8-13z"/><path d="M6.8 15a5.5 5.5 0 0 0 10.4 0"/></svg>
-              </div>
-              <p style="font-family:var(--font-mono);font-size:0.7rem;color:rgba(0,201,177,0.5);letter-spacing:0.05em;">CAR WASH ETP</p>
-            </div>
-            <div class="gallery-overlay">
-              <span class="gallery-tag">ETP</span>
-              <p class="gallery-title">ETP 10 KLD — Car Washing Application</p>
-              <span class="gallery-view">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
-                View Project
-              </span>
-            </div>
-          </div>
-
-          <div class="gallery-item gsap-stagger-child" data-category="wtp" tabindex="0" role="img" aria-label="DM Plant with MB Unit 5 m3/hr">
-            <div class="gallery-placeholder">
-              <div class="gallery-placeholder-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><ellipse cx="12" cy="5" rx="6" ry="3"/><path d="M18 5v7a6 3 0 0 1-12 0V5"/><path d="M6 8.5a6 3 0 0 0 12 0"/></svg>
-              </div>
-              <p style="font-family:var(--font-mono);font-size:0.7rem;color:rgba(0,201,177,0.5);letter-spacing:0.05em;">DM PLANT</p>
-            </div>
-            <div class="gallery-overlay">
-              <span class="gallery-tag">DM Plant</span>
-              <p class="gallery-title">DM Plant with MB Unit — 5 m³/hr</p>
-              <span class="gallery-view">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
-                View Project
-              </span>
-            </div>
-          </div>
-
-          <div class="gallery-item gsap-stagger-child" data-category="panel" tabindex="0" role="img" aria-label="Control Panels HT LT MCC PLC">
-            <div class="gallery-placeholder">
-              <div class="gallery-placeholder-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="18" rx="2"/><path d="M7 8h2m4 0h4M7 12h4m4 0h2M7 16h2m4 0h4"/><circle cx="5" cy="8" r="1" fill="currentColor" stroke="none"/></svg>
-              </div>
-              <p style="font-family:var(--font-mono);font-size:0.7rem;color:rgba(0,201,177,0.5);letter-spacing:0.05em;">CONTROL PANELS</p>
-            </div>
-            <div class="gallery-overlay">
-              <span class="gallery-tag">Control Panels</span>
-              <p class="gallery-title">Control Panels — HT/LT, MCC, PLC Series</p>
-              <span class="gallery-view">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
-                View Project
-              </span>
-            </div>
-          </div>
-
-          <div class="gallery-item gsap-stagger-child" data-category="stp" tabindex="0" role="img" aria-label="STP 900 KLD Ashiana Homes">
-            <div class="gallery-placeholder" style="background:linear-gradient(135deg,#0E3D6B 0%,#0B2B5C 100%);">
-              <div class="gallery-placeholder-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
-              </div>
-              <p style="font-family:var(--font-mono);font-size:0.7rem;color:rgba(0,201,177,0.5);letter-spacing:0.05em;">LARGE STP</p>
-            </div>
-            <div class="gallery-overlay">
-              <span class="gallery-tag">STP</span>
-              <p class="gallery-title">Sewage Treatment Plant — 900 KLD (Gurgaon)</p>
-              <span class="gallery-view">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
-                View Project
-              </span>
-            </div>
-          </div>
-        </div>
-
-        <!-- CTA -->
-        <div style="text-align:center;margin-top:3rem;" class="reveal">
-          <a href="#contact" class="btn btn-primary">
-            <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
-            Discuss Your Project
-          </a>
-        </div>
-      </div>
-    </section>
-
-    <!-- Wave -->
-    <div class="wave-divider" aria-hidden="true" style="background:#0A1628;">
-      <svg viewBox="0 0 1440 60" preserveAspectRatio="none" style="height:60px;">
-        <path d="M0,30 C360,0 720,60 1080,30 C1260,15 1380,45 1440,20 L1440,60 L0,60Z" fill="var(--color-secondary)"/>
       </svg>
     </div>
 

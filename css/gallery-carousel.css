@@ -1,0 +1,131 @@
+/* 3D Carousel Gallery */
+.gallery-scene {
+  width: 100%;
+  height: 500px;
+  perspective: 1200px; /* Increased perspective for better depth */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 6rem 0; /* More spacing */
+  overflow: visible; /* Allow overflow for 3D effect */
+  position: relative;
+  z-index: 10;
+}
+
+.gallery-carousel {
+  width: 280px; /* Slightly wider cards */
+  height: 380px;
+  position: absolute;
+  transform-style: preserve-3d;
+  /* Start deeper in Z space */
+  transform: translateZ(-638px) rotateY(0deg); 
+  animation: rotateCarousel 40s infinite linear;
+  transition: transform 1s;
+}
+
+.gallery-carousel:hover {
+  animation-play-state: paused;
+}
+
+.gallery-item {
+  position: absolute;
+  width: 280px;
+  height: 380px;
+  left: 0;
+  top: 0;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+  background: rgba(11, 43, 92, 0.6); /* Primary color with opacity */
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(0, 201, 177, 0.3); /* Teal accent border */
+  
+  /* The transforms derived from Python script */
+  /* 360deg / 15 items = 24deg per item */
+  /* translateZ = 638px (calculated for 15 items of width 280px) */
+  transform: rotateY(calc(var(--i) * 24deg)) translateZ(638px);
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  backface-visibility: hidden; /* Hide back face for performance */
+  -webkit-box-reflect: below 10px linear-gradient(transparent, transparent, rgba(0,0,0,0.2));
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+  filter: brightness(0.9);
+}
+
+.gallery-item:hover {
+  border-color: var(--color-accent, #00C9B1);
+  box-shadow: 0 0 30px rgba(0, 201, 177, 0.4);
+  z-index: 100; /* Bring hovered item to front logic if needed, but in 3D carousel structure z-index is tricky. Scale is better. */
+  filter: brightness(1.1);
+}
+
+.gallery-item:hover img {
+  transform: scale(1.1);
+  filter: brightness(1);
+}
+
+/* Keyframes for rotation */
+@keyframes rotateCarousel {
+  from { transform: translateZ(-638px) rotateY(0deg); }
+  to { transform: translateZ(-638px) rotateY(-360deg); } /* Negative for clockwise rotation feel */
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .gallery-scene {
+    height: 450px;
+    perspective: 1000px;
+    margin: 4rem 0;
+  }
+  .gallery-carousel {
+    width: 220px;
+    height: 320px;
+    /* Recalculate Z for smaller width: 220 / (2 * tan(12deg)) ≈ 517px */
+    transform: translateZ(-517px) rotateY(0deg);
+    animation-name: rotateCarouselTablet;
+  }
+  .gallery-item {
+    width: 220px;
+    height: 320px;
+    transform: rotateY(calc(var(--i) * 24deg)) translateZ(517px);
+  }
+}
+
+@media (max-width: 768px) {
+  .gallery-scene {
+    height: 350px;
+    perspective: 800px;
+    margin: 3rem 0;
+    overflow: hidden; /* Hide overflow on mobile to prevent scroll issues */
+  }
+  .gallery-carousel {
+    width: 160px;
+    height: 240px;
+    /* Recalculate Z for mobile width: 160 / (2 * tan(12deg)) ≈ 376px */
+    transform: translateZ(-376px) rotateY(0deg);
+    animation-name: rotateCarouselMobile;
+  }
+  .gallery-item {
+    width: 160px;
+    height: 240px;
+    border-radius: 12px;
+    transform: rotateY(calc(var(--i) * 24deg)) translateZ(376px);
+    -webkit-box-reflect: unset; /* Remove reflection on mobile for performance */
+  }
+}
+
+@keyframes rotateCarouselTablet {
+  from { transform: translateZ(-517px) rotateY(0deg); }
+  to { transform: translateZ(-517px) rotateY(-360deg); }
+}
+
+@keyframes rotateCarouselMobile {
+  from { transform: translateZ(-376px) rotateY(0deg); }
+  to { transform: translateZ(-376px) rotateY(-360deg); }
+}
